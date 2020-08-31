@@ -69,11 +69,17 @@ form{
 td{
     display: table-row;
     font-size: 12px;
+    background-color: black;
+    align-items: center;
 }
 table{
-    background-color: purple;
     width: 120px;
     display: inline-block;
-    text-align: center;
     margin: 10px;
+    border : 0px;
+}
+
+tr{
+    position: absolute;
+    margin-left: 0px;
 }

@@ -1,36 +1,38 @@
 function show() {
-    var reg = document.getElementById("reg");
+    let reg = document.getElementById("reg");
     reg.style.display = "inline-block";
 }
 
 function exit() {
-    var reg = document.getElementById("reg");
+    let reg = document.getElementById("reg");
     reg.style.display = "none";
 }
 
-function clear() {
-
-}
-
 function add() {
-    var reg = document.getElementById("reg");
-    var t1 = document.getElementById("t1");
-    var newTd = document.createElement("td");
-    var reg_t = document.getElementById("reg_t");
-    var reg_d = document.getElementById("reg_d");
-    var set_t = reg_t.value;
-    var set_d = reg_d.value;
+    let reg = document.getElementById("reg");
+    let t1 = document.getElementById("t1");
+    let newTd = document.createElement("td");
+    let reg_t = document.getElementById("reg_t");
+    let reg_d = document.getElementById("reg_d");
+    let set_t = reg_t.value;
+    let set_d = ""
+    if (reg_d.value == ""){
+        set_d = "No limit"
+    }
+    else{
+        set_d = reg_d.value;
+    }
     newTd.innerHTML = set_t + ", " + set_d;
     newTd.setAttribute("id", "t");
-    newTd.style.backgroundColor = "green";
+    newTd.style.backgroundColor = "white";
     newTd.addEventListener("click",
         function () {
-            var t2 = document.getElementById("t2");
+            let t2 = document.getElementById("t2");
             t1.removeChild(this);
             t2.appendChild(this);
             newTd.addEventListener("click",
                 function () {
-                    var t3 = document.getElementById("t3");
+                    let t3 = document.getElementById("t3");
                     t2.removeChild(this);
                     t3.appendChild(this);
                     newTd.addEventListener("click",
@@ -41,4 +43,17 @@ function add() {
         });
     t1.appendChild(newTd);
     reg.style.display = "none";
+}
+
+function clearAll(){
+    let check = confirm("you really want to clear all?")
+    if(check == true){
+         let tr = document.getElementsByTagName("tr");
+        for(let i=0; i < tr.length; i++){
+             tr[i].innerHTML = "";
+        }
+    }
+    else{
+        return;
+    }
 }
