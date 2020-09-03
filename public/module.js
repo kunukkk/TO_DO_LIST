@@ -15,16 +15,17 @@ function add() {
     let reg_t = document.getElementById("reg_t");
     let reg_d = document.getElementById("reg_d");
     let set_t = reg_t.value;
-    let set_d = ""
+    if(set_t == ""){
+        return;
+    }
+    let set_d = "";
     if (reg_d.value == ""){
-        set_d = "No limit"
+        set_d = "기간없음"
     }
     else{
         set_d = reg_d.value;
     }
-    newTd.innerHTML = set_t + ", " + set_d;
-    newTd.setAttribute("id", "t");
-    newTd.style.backgroundColor = "white";
+    newTd.innerHTML = set_t + " / " + set_d;
     newTd.addEventListener("click",
         function () {
             let t2 = document.getElementById("t2");

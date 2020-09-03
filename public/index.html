@@ -8,16 +8,17 @@
 </head>
 
 <body>
-    <div id="top">
+    <div id="sel">
         <div class="l_1" onclick="show()">할 일 추가하기</div>
         <div class="l_1" onclick="clearAll()">초기화 하기</div>
     </div>
     <hr>
-    <div id="bottom">
+    <div class="bottom">
         <div class="l_2">할 일 목록</div>
         <div class="l_2">진행중</div>
         <div class="l_2">완료</div>
-        <br>
+    </div>
+    <div class="bottom">
         <table>
             <tr id="t1"></tr>
         </table>
@@ -31,15 +32,13 @@
 
     <div id="reg">
         <span id="reg_title">할 일 등록</span>
-        <form id="list">
-            <span>title</span><br>
-            <input type="text" id="reg_t" required /><br>
-            <span>due date</span><br>
-            <input type="date" id="reg_d"><br>
+            <div><span class="reg_l">TITLE</span><br>
+            <input type="text" id="reg_t" required ></div><br>
+            <div><span class="reg_l">DUE DATE</span><br>
+            <input type="date" id="reg_d"></div><br>
             <div id = "but">
                 <input class="w" type="reset" value="등록" onclick="add()">
                 <input class="w" type="reset" value="닫기" onclick="exit()">
             </div>
-        </form>
-    </div>
+        </div>
 </body></html>
