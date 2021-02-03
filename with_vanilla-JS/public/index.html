@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>to do list</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer src="module.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="sel">
+        <div class="l_1" onclick="show()">할 일 추가하기</div>
+        <div class="l_1" onclick="clearAll()">초기화 하기</div>
+    </div>
+    <hr>
+    <div class="bottom">
+        <div class="l_2">할 일 목록</div>
+        <div class="l_2">진행중</div>
+        <div class="l_2">완료</div>
+    </div>
+    <div class="bottom">
+        <table>
+            <tr id="t1"></tr>
+        </table>
+        <table>
+            <tr id="t2"></tr>
+        </table>
+        <table>
+            <tr id="t3"></tr>
+        </table>
+    </div>
+
+    <div id="reg">
+        <span id="reg_title">할 일 등록</span>
+            <div><span class="reg_l">TITLE</span><br>
+            <input type="text" id="reg_t" required ></div><br>
+            <div><span class="reg_l">DUE DATE</span><br>
+            <input type="date" id="reg_d"></div><br>
+            <div id = "but">
+                <input class="w" type="reset" value="등록" onclick="add()">
+                <input class="w" type="reset" value="닫기" onclick="exit()">
+            </div>
+        </div>
+</body></html>
