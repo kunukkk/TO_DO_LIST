@@ -1,8 +1,9 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Header from "./components/Header";
 import Ready from "./components/Ready";
 import Ing from "./components/Ing";
 import Done from "./components/Done";
+import "./App.css";
 
 const App = () => {
   const [readyTodos, setReadyTodos] = useState([]);
@@ -38,9 +39,14 @@ const App = () => {
   return (
     <>
       <div>
-        <Header onInsert={onInsert} />
+        <Header
+          onInsert={onInsert}
+          setReadyTodos={setReadyTodos}
+          setIngTodos={setIngTodos}
+          setDoneTodos={setDoneTodos}
+        />
       </div>
-      <div>
+      <div className="contents">
         <Ready todos={readyTodos} onClick={readyClick} />
         <Ing todos={ingTodos} onClick={ingClick} />
         <Done todos={doneTodos} onClick={doneClick} />

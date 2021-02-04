@@ -1,6 +1,6 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 
-const Insert = ({ onInsert }) => {
+const Insert = ({ onInsert, setDisplay }) => {
   const [planValue, setPlanValue] = useState("");
   const [dateValue, setDateValue] = useState("");
 
@@ -19,11 +19,15 @@ const Insert = ({ onInsert }) => {
     e.preventDefault();
   };
 
+  const onClick = () => {
+    setDisplay(false);
+  };
+
   return (
     <div>
       <div>할 일 등록</div>
       <form onSubmit={onSubmit}>
-        <div>
+        <div className="inputs">
           <input
             type="text"
             placeholder="what is your plan?"
@@ -39,7 +43,9 @@ const Insert = ({ onInsert }) => {
         </div>
         <div>
           <button type="submit">등록</button>
-          <button type="reset">닫기</button>
+          <button type="reset" onClick={onClick}>
+            닫기
+          </button>
         </div>
       </form>
     </div>

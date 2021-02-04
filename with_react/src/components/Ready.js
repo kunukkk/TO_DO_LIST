@@ -3,8 +3,8 @@ import ListItem from "./ListItem";
 
 const Ready = ({ todos, onClick }) => {
   return (
-    <div style={{ background: "red" }}>
-      <span>Ready</span>
+    <div className="wrapper">
+      <span className="section_title">Ready</span>
       {todos.map((todo) => (
         <ListItem todo={todo} key={todo.id} onClick={onClick} />
       ))}

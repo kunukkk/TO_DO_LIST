@@ -1,0 +1,17 @@
+.header_btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#visible {
+  visibility: visible;
+}
+
+#hidden {
+  visibility: hidden;
+}
+
+.input_screen {
+  text-align: center;
+}
